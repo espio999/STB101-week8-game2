@@ -1,0 +1,26 @@
+---
+title: "drinking alchol tendency"
+output: html_notebook
+---
+
+```{r setup}
+library(readxl)
+Book2 <- read_excel("Book2.xlsx", sheet = "Sheet2")
+
+x = c(Book2$`Age 30`)
+y = c(Book2$`Age 20`)
+```
+
+## Survey data for drinking alcohol tendency in age 20 and age 30 groups.  
+### assumption  
+H0: no difference  
+H1: not H0  
+
+```{r}
+wilcox.test(x, y, paired = F, correct = F)
+```
+P is greater than 5%.  
+H0 is not rejected.  
+
+### conclusion  
+there is no differernt tendency between age 20 and age 30 groups.
